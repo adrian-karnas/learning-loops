@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+    <style>
+        body{
+            background-color: #1e2127;
+            color:aliceblue;
+        }
+        #kwadrat{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+  
+</body>
+<script>
+    async function main (){
+
+        let names=["patryk","kamil","adrian","Gosia","Dzesika"];
+        let awaitTime=200
+        let colors = ["red", "blue", "yellow", "green", "cyan"];
+        let kwadrat = document.getElementById("kwadrat");
+        
+
+
+
+        for(let i=0;i<names.length;i=i+1){
+            await new Promise(r => setTimeout(r, awaitTime));
+            let currentName=names[i];
+            console.log(names[i]);
+
+            let currentSquare = document.createElement("div");
+            currentSquare.id = "kwadrat";
+            document.body.appendChild(currentSquare)
+            currentSquare.innerHTML = currentName;
+            currentSquare.style.backgroundColor = colors[i]
+            
+        }
+        
+    }
+
+    main();
+
+</script>
+</html>
